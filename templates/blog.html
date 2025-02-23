@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .article {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        strong {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Latest News</h1>
+    {% for article in articles %}
+        <div class="article">
+            <h1>{{ article[1] }}</h1>  <!-- Headline -->
+            <p><strong>State:</strong> {{ article[3] }}</p>
+            <p><strong>District:</strong> {{ article[4] }}</p>
+            <p><strong>Summary:</strong> {{ article[6] }}</p>
+            <p><strong>Keywords:</strong> {{ article[7] }}</p>
+            <p><strong>Topic:</strong> {{ article[8] }}</p>
+            <p><strong>Article Text:</strong> {{ article[5] }}</p>
+            <p><strong>SEO Title:</strong> {{ article[9] }}</p>
+            <p><strong>Meta Description:</strong> {{ article[10] }}</p>
+        </div>
+        <hr>
+    {% endfor %}
+</body>
+</html>
