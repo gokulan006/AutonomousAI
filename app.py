@@ -95,6 +95,15 @@ def news_detail(news_id):
     else:
         return "News article not found", 404
 
+# New route for the blog
+@app.route('/blog')
+def blog():
+    with sqlite3.connect(DATABASE) as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM csv_data")
+        articles = cursor.fetchall()
+    return render_template('blog.html', articles=articles)
+
 if __name__ == '__main__':
     init_db()
     app.run(debug=True)
