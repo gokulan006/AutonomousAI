@@ -93,7 +93,6 @@ python-dateutil==2.9.0.post0
 python-multipart==0.0.19
 pytorch-lightning==2.4.0
 pytz==2024.2
-pywin32==308
 PyYAML==6.0.2
 pyzmq==26.2.0
 readchar==4.2.1
