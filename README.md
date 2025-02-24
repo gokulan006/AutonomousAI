@@ -88,6 +88,19 @@ Your application should now be live at:
 https://your-app-name.herokuapp.com/
 ```
 
+## ⚠️ **Troubleshooting: Website Not Opening?**
+
+If your website is not opening due to a firewall restriction or network issue, try the following:
+1. **Check if the app is running** using Heroku logs:
+   ```sh
+   heroku logs --tail
+   ```
+2. **Use a VPN** (e.g., ProtonVPN, Windscribe, or Opera VPN) to bypass restrictions.
+3. **Try a web proxy** like [https://hide.me/en/proxy](https://hide.me/en/proxy).
+4. **Access using HTTPS instead of HTTP**.
+5. **Change your DNS settings** to Google DNS (8.8.8.8, 8.8.4.4) or Cloudflare DNS (1.1.1.1, 1.0.0.1).
+6. **Try opening from another network or mobile data**.
+   
 ## 📜 File Structure
 ```
 flask-news-blog/
