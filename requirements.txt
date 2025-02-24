@@ -1,13 +1,3 @@
-numpy
-pandas
-matplotlib
-seaborn
-scikit-learn
-tensorflow
-torch
-transformers
-nltk
-spacy
-sqlite-utils
-aiosqlite
-gunicorn
+Flask==3.0.0
+gunicorn==21.2.0
+sqlite3==0.0.1
