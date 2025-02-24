@@ -100,9 +100,23 @@ def news_detail(news_id):
 def blog():
     with sqlite3.connect(DATABASE) as conn:
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM csv_data")
+        # Fetch all articles grouped by state and district
+        cursor.execute("SELECT state, district, id, headline, link, article_text, summary, keywords, topic, seo_title, meta_description FROM csv_data ORDER BY state, district")
         articles = cursor.fetchall()
-    return render_template('blog.html', articles=articles)
+    
+    # Organize articles into a nested dictionary: {state: {district: [articles]}}
+    organized_articles = {}
+    for article in articles:
+        state = article[0]  # State
+        district = article[1]  # District
+        if state not in organized_articles:
+            organized_articles[state] = {}
+        if district not in organized_articles[state]:
+            organized_articles[state][district] = []
+        organized_articles[state][district].append(article)
+    
+    return render_template('blog.html', organized_articles=organized_articles)
+
 
 if __name__ == '__main__':
     init_db()
